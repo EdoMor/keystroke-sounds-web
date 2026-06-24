@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Keystroke Sounds — give your keyboard character</title>
+<meta name="description" content="Play themed keystroke sounds as you type — Star Trek TNG (LCARS), mechanical keyboard, typewriter and more. Lives in your Windows tray." />
+<style>
+  :root{
+    --accent:#1d2b53; --amber:#d97a26; --bg:#f4f5f8; --ink:#1b2233; --muted:#5a6072;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
+       color:var(--ink);background:var(--bg);line-height:1.55}
+  a{color:var(--amber)}
+  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(160deg,#101a3a,#1d2b53);color:#fff;padding:64px 0 56px}
+  header .wrap{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+  .hero-text{flex:1 1 320px}
+  h1{font-size:2.5rem;margin:0 0 10px}
+  .tag{font-size:1.15rem;color:#cdd6f5;margin:0 0 22px}
+  .cta{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;
+       font-weight:700;padding:14px 26px;border-radius:10px;font-size:1.05rem;
+       box-shadow:0 6px 18px rgba(217,122,38,.35)}
+  .cta.secondary{background:transparent;border:2px solid #cdd6f5;color:#fff;
+                 box-shadow:none;margin-left:10px}
+  .price{margin-top:14px;color:#cdd6f5;font-size:.95rem}
+  .shot{flex:1 1 300px;text-align:center}
+  .shot img{max-width:300px;width:100%;border-radius:12px;
+            box-shadow:0 12px 40px rgba(0,0,0,.35)}
+  section{padding:52px 0}
+  h2{font-size:1.6rem;color:var(--accent);margin:0 0 24px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+  .card{background:#fff;border:1px solid #e4e7ef;border-radius:12px;padding:20px}
+  .card h3{margin:.2rem 0 .4rem;color:var(--accent);font-size:1.05rem}
+  .card p{margin:0;color:var(--muted);font-size:.95rem}
+  .packs{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .pill{background:#fff;border:1px solid #dfe3ee;border-radius:999px;
+        padding:7px 14px;font-size:.9rem;color:var(--accent)}
+  .buy{background:#fff;border:1px solid #e4e7ef;border-radius:16px;padding:34px;
+       text-align:center;box-shadow:0 8px 30px rgba(20,30,70,.06)}
+  .buy .big{font-size:2rem;font-weight:800;color:var(--accent)}
+  .muted{color:var(--muted)}
+  footer{padding:34px 0;color:var(--muted);font-size:.88rem;text-align:center}
+  .note{font-size:.85rem;color:var(--muted);margin-top:10px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="hero-text">
+      <h1>Keystroke&nbsp;Sounds</h1>
+      <p class="tag">Make your keyboard sound like the bridge of the Enterprise —
+        or a clacky mechanical board, or an old typewriter. A different sound for
+        every key, system-wide, tucked into your Windows tray.</p>
+      <!-- Replace the href with your Lemon Squeezy checkout URL -->
+      <a class="cta" id="buy" href="REPLACE_WITH_LEMONSQUEEZY_CHECKOUT_URL">Buy &amp; Download</a>
+      <a class="cta secondary" href="#features">See features</a>
+      <div class="price">One-time purchase · Windows 10/11 · instant license key</div>
+    </div>
+    <div class="shot"><img src="screenshot.png" alt="Keystroke Sounds window" /></div>
+  </div>
+</header>
+
+<section id="features">
+  <div class="wrap">
+    <h2>Why you'll love it</h2>
+    <div class="grid">
+      <div class="card"><h3>A sound for every key</h3><p>Letters spread across a
+        sample pool, with distinct sounds for Space, Enter, Backspace, Tab and
+        modifiers — so typing actually sounds good, not like one key on repeat.</p></div>
+      <div class="card"><h3>Lives in the tray</h3><p>Close or minimise and it
+        tucks into the Windows taskbar arrow, playing quietly in the background
+        across every app.</p></div>
+      <div class="card"><h3>Make it yours</h3><p>Build your own packs from any
+        audio, swap sounds per key, or load a set from a link — your custom
+        packs survive updates.</p></div>
+      <div class="card"><h3>Stays fresh</h3><p>One-click updates, plus a growing
+        library of downloadable sound packs right inside the app.</p></div>
+    </div>
+
+    <h2 style="margin-top:46px">Sound packs included</h2>
+    <div class="packs">
+      <span class="pill">Star Trek TNG (LCARS)</span>
+      <span class="pill">Mechanical Keyboard</span>
+      <span class="pill">Typewriter</span>
+      <span class="pill">Retro 8-bit</span>
+      <span class="pill">Sci-Fi Laser</span>
+      <span class="pill">Bubbles</span>
+      <span class="pill">Soft (Marshmallow)</span>
+      <span class="pill">+ Piano &amp; Sonar to download</span>
+    </div>
+  </div>
+</section>
+
+<section style="background:#eef0f6">
+  <div class="wrap">
+    <div class="buy">
+      <div class="big">Get Keystroke Sounds</div>
+      <p class="muted">Secure checkout with card or PayPal. You'll get a license
+        key and a download link by email instantly.</p>
+      <!-- Replace the href with your Lemon Squeezy checkout URL -->
+      <p><a class="cta" href="REPLACE_WITH_LEMONSQUEEZY_CHECKOUT_URL">Buy now</a></p>
+      <p class="note">After buying: install, open the app, click <b>License</b>,
+        and paste your key to activate.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    © <span id="yr"></span> Keystroke Sounds. Star Trek is a trademark of its
+    respective owners; this product is not affiliated with or endorsed by them.
+  </div>
+</footer>
+
+<!-- Optional: Lemon Squeezy overlay checkout. Uncomment and use a lemonsqueezy.com/buy
+     link with ?embed=1 on the buttons to open checkout in an overlay instead of a new tab.
+<script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+-->
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
