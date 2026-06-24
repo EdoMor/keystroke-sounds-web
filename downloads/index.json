@@ -1,0 +1,124 @@
+{
+  "categories": [
+    {
+      "name": "Musical",
+      "packs": [
+        {
+          "id": "marimba",
+          "name": "Marimba",
+          "description": "Warm wooden marimba notes \u2014 each key its own pitch.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/marimba.zip"
+        },
+        {
+          "id": "harp",
+          "name": "Harp",
+          "description": "Gently plucked harp strings.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/harp.zip"
+        },
+        {
+          "id": "music_box",
+          "name": "Music Box",
+          "description": "Delicate high music-box chimes.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/music_box.zip"
+        },
+        {
+          "id": "kalimba",
+          "name": "Kalimba",
+          "description": "Metallic thumb-piano tines.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/kalimba.zip"
+        },
+        {
+          "id": "vibraphone",
+          "name": "Vibraphone",
+          "description": "Mellow vibraphone with a soft tremolo.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/vibraphone.zip"
+        }
+      ]
+    },
+    {
+      "name": "Nature",
+      "packs": [
+        {
+          "id": "rain",
+          "name": "Rain",
+          "description": "Soft rain droplets.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/rain.zip"
+        },
+        {
+          "id": "water_drops",
+          "name": "Water Drops",
+          "description": "Plinky water drips in a cave.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/water_drops.zip"
+        },
+        {
+          "id": "wood_block",
+          "name": "Wood Block",
+          "description": "Hollow percussion wood blocks.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/wood_block.zip"
+        },
+        {
+          "id": "bamboo",
+          "name": "Bamboo",
+          "description": "Hollow bamboo knocks.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/bamboo.zip"
+        },
+        {
+          "id": "pebbles",
+          "name": "Pebbles",
+          "description": "Tiny clicking stones.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/pebbles.zip"
+        }
+      ]
+    },
+    {
+      "name": "Sci-Fi",
+      "packs": [
+        {
+          "id": "hologram",
+          "name": "Hologram",
+          "description": "Shimmering holographic blips.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/hologram.zip"
+        },
+        {
+          "id": "force_field",
+          "name": "Force Field",
+          "description": "Buzzy energy-field taps.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/force_field.zip"
+        },
+        {
+          "id": "teleporter",
+          "name": "Teleporter",
+          "description": "Beaming-up sweeps with echo.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/teleporter.zip"
+        },
+        {
+          "id": "droid",
+          "name": "Droid",
+          "description": "Warbling little robot chirps.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/droid.zip"
+        },
+        {
+          "id": "plasma",
+          "name": "Plasma",
+          "description": "Crackly plasma zaps.",
+          "author": "EdoMor",
+          "url": "https://edomor.github.io/keystroke-sounds-web/downloads/plasma.zip"
+        }
+      ]
+    }
+  ]
+}
