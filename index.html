@@ -24,6 +24,10 @@
        box-shadow:0 6px 18px rgba(217,122,38,.35)}
   .cta.secondary{background:transparent;border:2px solid #cdd6f5;color:#fff;
                  box-shadow:none;margin-left:10px}
+  .cta.download{background:#1e9e5a;box-shadow:0 6px 18px rgba(30,158,90,.35)}
+  .ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .ghost{color:#cdd6f5;text-decoration:none;font-weight:600}
+  .ghost:hover{text-decoration:underline}
   .price{margin-top:14px;color:#cdd6f5;font-size:.95rem}
   .shot{flex:1 1 300px;text-align:center}
   .shot img{max-width:300px;width:100%;border-radius:12px;
@@ -43,6 +47,13 @@
   .muted{color:var(--muted)}
   footer{padding:34px 0;color:var(--muted);font-size:.88rem;text-align:center}
   .note{font-size:.85rem;color:var(--muted);margin-top:10px}
+  #contact form{max-width:560px;display:grid;gap:14px;margin-top:8px}
+  #contact label{display:grid;gap:6px;font-weight:600;color:var(--accent);font-size:.95rem}
+  #contact input,#contact textarea{font:inherit;padding:10px 12px;border:1px solid #cfd5e4;
+       border-radius:9px;background:#fff;color:var(--ink);width:100%}
+  #contact button{justify-self:start;border:0;cursor:pointer}
+  .warn{background:#fff5e6;border:1px solid #f0c987;color:#7a5200;border-radius:10px;
+       padding:12px 14px;font-size:.92rem;margin:6px 0 4px}
 </style>
 </head>
 <body>
@@ -53,10 +64,12 @@
       <p class="tag">Make your keyboard sound like the bridge of the Enterprise —
         or a clacky mechanical board, or an old typewriter. A different sound for
         every key, system-wide, tucked into your Windows tray.</p>
-      <!-- Replace the href with your Lemon Squeezy checkout URL -->
-      <a class="cta" id="buy" href="https://keysounds.lemonsqueezy.com/checkout/buy/c94a5390-95f2-4cdf-829f-036d9fe201a7">Buy &amp; Download</a>
-      <a class="cta secondary" href="#features">See features</a>
-      <div class="price">One-time purchase · Windows 10/11 · instant license key</div>
+      <div class="ctas">
+        <a class="cta download" id="download" href="https://github.com/EdoMor/keystroke-sounds-web/releases/latest/download/KeystrokeSounds-Setup.exe">⬇ Download</a>
+        <a class="cta" id="buy" href="https://keysounds.lemonsqueezy.com/checkout/buy/c94a5390-95f2-4cdf-829f-036d9fe201a7">Buy a license</a>
+      </div>
+      <div class="price"><a class="ghost" href="#features">See features</a> ·
+        <a class="ghost" href="#contact">Contact</a> · One-time purchase · Windows 10/11</div>
     </div>
     <div class="shot"><img src="screenshot.png" alt="Keystroke Sounds window" /></div>
   </div>
@@ -97,13 +110,42 @@
   <div class="wrap">
     <div class="buy">
       <div class="big">Get Keystroke Sounds</div>
-      <p class="muted">Secure checkout with card or PayPal. You'll get a license
-        key and a download link by email instantly.</p>
-      <!-- Replace the href with your Lemon Squeezy checkout URL -->
-      <p><a class="cta" href="https://keysounds.lemonsqueezy.com/checkout/buy/c94a5390-95f2-4cdf-829f-036d9fe201a7">Buy now</a></p>
+      <p class="muted">Download the installer for free, then buy a license to
+        unlock it. Secure checkout with card or PayPal — your key arrives by
+        email instantly.</p>
+      <p class="ctas" style="justify-content:center">
+        <a class="cta download" href="https://github.com/EdoMor/keystroke-sounds-web/releases/latest/download/KeystrokeSounds-Setup.exe">⬇ Download</a>
+        <a class="cta" href="https://keysounds.lemonsqueezy.com/checkout/buy/c94a5390-95f2-4cdf-829f-036d9fe201a7">Buy a license</a>
+      </p>
       <p class="note">After buying: install, open the app, click <b>License</b>,
         and paste your key to activate.</p>
     </div>
+  </div>
+</section>
+
+<section id="contact" style="background:#eef0f6">
+  <div class="wrap">
+    <h2>Contact &amp; support</h2>
+    <p class="muted">Questions, bug reports or feedback? Send a message below — it
+      opens a public support ticket on GitHub that we follow and reply to.</p>
+    <div class="warn">⚠️ <b>Never include your license / activation key here.</b>
+      Submissions become <b>public</b> GitHub issues that anyone can read, so keep
+      keys (and anything else private) out of this form. For licence problems,
+      just describe the issue and we'll follow up by email.</div>
+    <form id="contact-form" onsubmit="return submitContact(event)">
+      <label>Your email (so we can reply)
+        <input type="email" id="c-email" required placeholder="you@example.com" />
+      </label>
+      <label>Subject
+        <input type="text" id="c-subject" required placeholder="Short summary" />
+      </label>
+      <label>Message
+        <textarea id="c-message" required rows="5" placeholder="How can we help?"></textarea>
+      </label>
+      <button class="cta" type="submit">Open support ticket on GitHub</button>
+      <p class="note">This opens GitHub with your message pre-filled — click
+        “Submit new issue” there to send. A free GitHub account is required.</p>
+    </form>
   </div>
 </section>
 
@@ -118,6 +160,28 @@
      link with ?embed=1 on the buttons to open checkout in an overlay instead of a new tab.
 <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 -->
-<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Contact form -> opens a pre-filled NEW issue on the public web repo. No
+  // backend and no token in the page: the visitor confirms/sends it on GitHub.
+  function submitContact(e){
+    e.preventDefault();
+    var email = document.getElementById('c-email').value.trim();
+    var subject = document.getElementById('c-subject').value.trim();
+    var message = document.getElementById('c-message').value.trim();
+    var body =
+      "Reply to: " + email + "\n\n" +
+      message + "\n\n" +
+      "---\n" +
+      "Sent from the Keystroke Sounds website contact form. " +
+      "Reminder: this issue is public — do not post license/activation keys.";
+    var url = "https://github.com/EdoMor/keystroke-sounds-web/issues/new" +
+      "?title=" + encodeURIComponent("[Support] " + (subject || "Contact")) +
+      "&body=" + encodeURIComponent(body);
+    window.open(url, "_blank", "noopener");
+    return false;
+  }
+</script>
 </body>
 </html>
