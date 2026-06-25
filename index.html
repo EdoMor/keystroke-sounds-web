@@ -4,48 +4,86 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Keystroke Sounds — give your keyboard character</title>
-<meta name="description" content="Play themed keystroke sounds as you type — Star Trek TNG (LCARS), mechanical keyboard, typewriter and more. Lives in your Windows tray." />
+<meta name="description" content="Play themed keystroke sounds as you type — Star Trek TNG (LCARS), mechanical keyboard, typewriter and more. Now with typing stats, a live key heatmap, quiet hours and a global mute hotkey. Lives in your Windows tray." />
 <style>
   :root{
-    --accent:#1d2b53; --amber:#d97a26; --bg:#f4f5f8; --ink:#1b2233; --muted:#5a6072;
+    --accent:#1d2b53; --amber:#d97a26; --bg:#f4f5f8; --ink:#1b2233;
+    --muted:#5a6072; --line:#e4e7ef;
   }
   *{box-sizing:border-box}
   body{margin:0;font-family:"Segoe UI",system-ui,-apple-system,Roboto,Arial,sans-serif;
        color:var(--ink);background:var(--bg);line-height:1.55}
   a{color:var(--amber)}
-  .wrap{max-width:960px;margin:0 auto;padding:0 20px}
-  header{background:linear-gradient(160deg,#101a3a,#1d2b53);color:#fff;padding:64px 0 56px}
-  header .wrap{display:flex;gap:36px;align-items:center;flex-wrap:wrap}
-  .hero-text{flex:1 1 320px}
-  h1{font-size:2.5rem;margin:0 0 10px}
-  .tag{font-size:1.15rem;color:#cdd6f5;margin:0 0 22px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 20px}
+
+  /* ---- hero ---- */
+  header{background:radial-gradient(1200px 500px at 80% -10%,#2a3e7a,transparent),
+         linear-gradient(160deg,#101a3a,#1d2b53);color:#fff;padding:60px 0 56px}
+  header .wrap{display:flex;gap:44px;align-items:center;flex-wrap:wrap}
+  .hero-text{flex:1 1 340px}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(217,122,38,.18);
+         border:1px solid rgba(217,122,38,.55);color:#ffd9b0;font-weight:700;
+         font-size:.8rem;padding:6px 12px;border-radius:999px;margin-bottom:16px}
+  .badge .dot{width:8px;height:8px;border-radius:50%;background:var(--amber);
+         box-shadow:0 0 0 0 rgba(217,122,38,.6);animation:ping 2s infinite}
+  @keyframes ping{0%{box-shadow:0 0 0 0 rgba(217,122,38,.6)}
+                  70%{box-shadow:0 0 0 10px rgba(217,122,38,0)}
+                  100%{box-shadow:0 0 0 0 rgba(217,122,38,0)}}
+  h1{font-size:2.6rem;margin:0 0 10px;letter-spacing:-.5px}
+  .tag{font-size:1.15rem;color:#cdd6f5;margin:0 0 24px;max-width:36ch}
   .cta{display:inline-block;background:var(--amber);color:#fff;text-decoration:none;
        font-weight:700;padding:14px 26px;border-radius:10px;font-size:1.05rem;
-       box-shadow:0 6px 18px rgba(217,122,38,.35)}
-  .cta.secondary{background:transparent;border:2px solid #cdd6f5;color:#fff;
-                 box-shadow:none;margin-left:10px}
+       box-shadow:0 6px 18px rgba(217,122,38,.35);transition:transform .12s ease}
+  .cta:hover{transform:translateY(-2px)}
   .cta.download{background:#1e9e5a;box-shadow:0 6px 18px rgba(30,158,90,.35)}
   .ctas{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
   .ghost{color:#cdd6f5;text-decoration:none;font-weight:600}
   .ghost:hover{text-decoration:underline}
-  .price{margin-top:14px;color:#cdd6f5;font-size:.95rem}
-  .shot{flex:1 1 300px;text-align:center}
-  .shot img{max-width:300px;width:100%;border-radius:12px;
-            box-shadow:0 12px 40px rgba(0,0,0,.35)}
-  section{padding:52px 0}
-  h2{font-size:1.6rem;color:var(--accent);margin:0 0 24px}
+  .price{margin-top:16px;color:#9fb0e0;font-size:.95rem}
+  .shot{flex:1 1 320px;display:flex;justify-content:center}
+  .hero-shot{width:100%;max-width:340px;border-radius:14px;
+       box-shadow:0 22px 60px rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.14)}
+
+  section{padding:56px 0}
+  h2{font-size:1.75rem;color:var(--accent);margin:0 0 8px;letter-spacing:-.3px}
+  .lead{color:var(--muted);margin:0 0 30px;font-size:1.05rem;max-width:60ch}
+  .kicker{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:800;
+          color:var(--amber);margin:0 0 6px}
+
+  /* ---- "new" feature rows ---- */
+  .new{background:linear-gradient(180deg,#eef1f7,#f4f5f8)}
+  .feature{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+           background:#fff;border:1px solid var(--line);border-radius:18px;padding:30px;
+           box-shadow:0 18px 50px rgba(20,30,70,.07)}
+  .feature + .feature{margin-top:26px}
+  .feature .copy h3{font-size:1.5rem;color:var(--accent);margin:.2rem 0 10px}
+  .feature .copy p{color:var(--muted);margin:0 0 16px}
+  .visual{display:flex;justify-content:center}
+  .screen{width:100%;max-width:400px;border-radius:14px;border:1px solid var(--line);
+          box-shadow:0 16px 44px rgba(20,30,70,.20);display:block;background:#fff}
+  .ticks{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .ticks li{display:flex;gap:10px;align-items:flex-start;color:var(--ink);font-size:.97rem}
+  .ticks li svg{flex:0 0 auto;margin-top:2px}
+  .ticks b{color:var(--accent)}
+  @media(max-width:760px){
+    .feature{grid-template-columns:1fr;gap:24px}
+    .feature .visual{order:-1}            /* image on top on mobile */
+  }
+
+  /* ---- feature grid ---- */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-  .card{background:#fff;border:1px solid #e4e7ef;border-radius:12px;padding:20px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
   .card h3{margin:.2rem 0 .4rem;color:var(--accent);font-size:1.05rem}
   .card p{margin:0;color:var(--muted);font-size:.95rem}
+
   .packs{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
-  .pill{background:#fff;border:1px solid #dfe3ee;border-radius:999px;
-        padding:7px 14px;font-size:.9rem;color:var(--accent)}
-  .buy{background:#fff;border:1px solid #e4e7ef;border-radius:16px;padding:34px;
+  .pill{background:#fff;border:1px solid #dfe3ee;border-radius:999px;padding:8px 15px;
+        font-size:.9rem;color:var(--accent)}
+  .buy{background:#fff;border:1px solid var(--line);border-radius:18px;padding:36px;
        text-align:center;box-shadow:0 8px 30px rgba(20,30,70,.06)}
-  .buy .big{font-size:2rem;font-weight:800;color:var(--accent)}
+  .buy .big{font-size:2.1rem;font-weight:800;color:var(--accent)}
   .muted{color:var(--muted)}
-  footer{padding:34px 0;color:var(--muted);font-size:.88rem;text-align:center}
+  footer{padding:36px 0;color:var(--muted);font-size:.88rem;text-align:center}
   .note{font-size:.85rem;color:var(--muted);margin-top:10px}
   #contact form{max-width:560px;display:grid;gap:14px;margin-top:8px}
   #contact label{display:grid;gap:6px;font-weight:600;color:var(--accent);font-size:.95rem}
@@ -54,45 +92,107 @@
   #contact button{justify-self:start;border:0;cursor:pointer}
   .warn{background:#fff5e6;border:1px solid #f0c987;color:#7a5200;border-radius:10px;
        padding:12px 14px;font-size:.92rem;margin:6px 0 4px}
+  @media(prefers-reduced-motion:reduce){.badge .dot{animation:none}}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
     <div class="hero-text">
+      <span class="badge"><span class="dot"></span> New in 1.3 — Stats, Heatmap, Quiet Hours &amp; Hotkey</span>
       <h1>Keystroke&nbsp;Sounds</h1>
-      <p class="tag">Make your keyboard sound like the bridge of the Enterprise —
-        or a clacky mechanical board, or an old typewriter. A different sound for
-        every key, system-wide, tucked into your Windows tray.</p>
+      <p class="tag">Make every key sound like the bridge of the Enterprise — a clacky
+        mechanical board, or an old typewriter. Now it also <b>tracks how you type</b>
+        and stays out of your way when you need quiet.</p>
       <div class="ctas">
         <a class="cta download" id="download" href="https://github.com/EdoMor/keystroke-sounds-web/releases/latest/download/KeystrokeSounds-Setup.exe">⬇ Download</a>
         <a class="cta" id="buy" href="https://keysounds.lemonsqueezy.com/checkout/buy/c94a5390-95f2-4cdf-829f-036d9fe201a7">Buy a license</a>
       </div>
-      <div class="price"><a class="ghost" href="#features">See features</a> ·
+      <div class="price"><a class="ghost" href="#new">What's new</a> ·
+        <a class="ghost" href="#features">Features</a> ·
         <a class="ghost" href="#contact">Contact</a> · One-time purchase · Windows 10/11</div>
     </div>
-    <div class="shot"><img src="screenshot.png" alt="Keystroke Sounds window" /></div>
+    <div class="shot">
+      <img class="hero-shot" src="screenshot.png"
+           alt="Keystroke Sounds app window with sound packs including Star Trek TNG (LCARS)" />
+    </div>
   </div>
 </header>
 
+<!-- =================== NEW IN 1.3 =================== -->
+<section id="new" class="new">
+  <div class="wrap">
+    <p class="kicker">New in 1.3</p>
+    <h2>More than sound — insight, and control</h2>
+    <p class="lead">Keystroke Sounds now understands how you type and respects when you
+      need silence — two upgrades that make it a tool you keep, not a toy you mute.</p>
+
+    <!-- Row 1: image left, copy right -->
+    <div class="feature">
+      <div class="visual">
+        <img class="screen" src="shot-stats.png" loading="lazy"
+             alt="Stats tab: live words-per-minute, session, today and all-time keystroke counts, and a colour key heatmap of the whole keyboard" />
+      </div>
+      <div class="copy">
+        <p class="kicker">Insight</p>
+        <h3>Typing stats &amp; a live key heatmap</h3>
+        <p>A new <b>Stats</b> tab turns your typing into a picture: watch your
+          words-per-minute climb in real time, and see the whole keyboard light up
+          cool&nbsp;→&nbsp;hot by how often you hit each key.</p>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Live WPM</b> plus session, daily and all-time totals.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Colour heatmap</b> of every key — hover for its exact count.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>100% private.</b> Counts stay on your PC and reset any time.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Row 2: copy left, image right -->
+    <div class="feature">
+      <div class="copy">
+        <p class="kicker">Control</p>
+        <h3>Quiet hours &amp; a global mute hotkey</h3>
+        <p>Keep the clacks for when you want them. Schedule automatic silence, or
+          mute instantly from anywhere — without ever opening the window.</p>
+        <ul class="ticks">
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Quiet hours:</b> set a daily window (even past midnight) and it mutes itself.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span><b>Global hotkey:</b> one shortcut (default <b>Ctrl+Alt+M</b>) toggles sound system-wide.</span></li>
+          <li><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="9" fill="#1e9e5a"/><path d="M4.6 9.2l2.7 2.7 6-6.2" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> <span>Perfect for calls and screen-shares — your stats keep counting while muted.</span></li>
+        </ul>
+      </div>
+      <div class="visual">
+        <img class="screen" src="shot-settings.png" loading="lazy"
+             alt="Settings tab: quiet-hours schedule from 22:00 to 07:00 and a global mute hotkey set to Ctrl+Alt+M" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== FEATURES =================== -->
 <section id="features">
   <div class="wrap">
     <h2>Why you'll love it</h2>
     <div class="grid">
-      <div class="card"><h3>A sound for every key</h3><p>Letters spread across a
+      <div class="card"><h3>🔊 A sound for every key</h3><p>Letters spread across a
         sample pool, with distinct sounds for Space, Enter, Backspace, Tab and
         modifiers — so typing actually sounds good, not like one key on repeat.</p></div>
-      <div class="card"><h3>Lives in the tray</h3><p>Close or minimise and it
+      <div class="card"><h3>🛟 Lives in the tray</h3><p>Close or minimise and it
         tucks into the Windows taskbar arrow, playing quietly in the background
         across every app.</p></div>
-      <div class="card"><h3>Make it yours</h3><p>Build your own packs from any
+      <div class="card"><h3>🎨 Make it yours</h3><p>Build your own packs from any
         audio, swap sounds per key, or load a set from a link — your custom
-        packs survive updates. <a href="https://github.com/EdoMor/keystroke-sounds-web#hosting-your-own-custom-sound-source">Host your own sound source →</a></p></div>
-      <div class="card"><h3>Stays fresh</h3><p>One-click updates, plus a growing
+        packs survive updates.</p></div>
+      <div class="card"><h3>📈 Know your keyboard</h3><p>Live WPM, daily &amp;
+        all-time counts and a colour key heatmap — all tracked privately on your
+        own machine.</p></div>
+      <div class="card"><h3>🌙 Quiet when you need it</h3><p>Quiet-hours scheduling
+        and a global mute hotkey keep things silent during calls, focus time or
+        late nights.</p></div>
+      <div class="card"><h3>♻️ Stays fresh</h3><p>One-click updates, plus a growing
         library of downloadable sound packs right inside the app.</p></div>
     </div>
 
-    <h2 style="margin-top:46px">Sound packs included</h2>
+    <h2 style="margin-top:48px">Sound packs included</h2>
     <div class="packs">
       <span class="pill">Star Trek TNG (LCARS)</span>
       <span class="pill">Mechanical Keyboard</span>
