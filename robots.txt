@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://edomor.github.io/keystroke-sounds-web/sitemap.xml
